@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  overflow: auto;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px 10px; 
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  min-width: 100%;
+  max-width: 1200px;
+}
+
+.filters {
+  display: flex;
+  padding: 1px; 
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+  width: 100%;
+  height: 100%;
+}
+
+.filters select, .filters input[type="text"] {
+  flex-grow: 1; /* Makes each element grow to fill the container */
+  margin-right: 10px; /* Adds spacing between the elements */
+}
+
+.filters input[type="text"] {
+  flex-basis: 33%; /* Takes about one third of the space */
+}
+
+.filters select {
+  flex-basis: 33%; 
+}
+
+.filters select {
+  padding: 5px 10px; /* Padding inside the select box  */
+  margin-right: 10px; /* Space between select boxes */
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column; /* Stack the select boxes vertically */
+    align-items: stretch; /* Stretch children to fill the width of the container */
+  }
+
+  .filters select {
+    margin-bottom: 10px; /* Add space between the stacked select boxes */
+    width: 100%; /* Full width select boxes for easier interaction */
+  }
+
+  .filters select:last-child {
+    margin-right: 0; /* Remove the margin right for the last select on small screens */
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr; /* column adjustment for small screens */
+  }
+  body {
+    font-size: 14px; /* Smaller font size for small screens */
+  }
+}
+

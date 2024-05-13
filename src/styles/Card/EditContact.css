@@ -1,0 +1,23 @@
+.contact-edit-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.contact-edit-content input,
+.contact-edit-content button {
+  margin: 10px;
+  width: 80%; /* Set a specific width for inputs and buttons */
+}
+
+.select-buttons {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+.select-buttons button {
+  margin: 0 5px; 
+}

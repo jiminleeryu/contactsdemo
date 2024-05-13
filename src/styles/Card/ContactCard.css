@@ -1,0 +1,70 @@
+.contact-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    transition: transform 0.2s ease;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.03);
+  }
+
+  .contact-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .contact-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .contact-address {
+    margin: 0;
+    font-size: 14px;
+    color: grey;
+  }
+
+  @media (min-width: 768px) {
+    .contact-card {
+      flex-direction: row;
+      justify-content: start;
+    }
+  }
+
+  .option {
+    width: 50%; /* Set the desired width */
+    padding: 8px 12px; /* Padding for a larger click area and aesthetics */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* A light border */
+    background-color: white; /* Background color */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Cursor pointer to indicate it's clickable */
+  }
+  
+  .option:focus {
+    outline: none; /* Removes the default focus outline */
+    border-color: #007BFF; /* Highlight color when focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a glow effect on focus */
+  }
+
+  .select-buttons button {
+    transition: background-color 0.2s ease;
+  }
+  

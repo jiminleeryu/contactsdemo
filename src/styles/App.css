@@ -1,0 +1,25 @@
+input {
+    height: 35px;
+    border-radius: 10px;
+    border: solid rgb(204, 204, 204);
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(184, 184, 184);
+}
+
+.header-container {
+    text-align: center;
+    width: 100%;
+  }
+
+button {
+    margin: auto;
+    height: 55px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+}

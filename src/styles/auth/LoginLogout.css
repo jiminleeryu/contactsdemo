@@ -1,0 +1,13 @@
+.login-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+.logout-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}

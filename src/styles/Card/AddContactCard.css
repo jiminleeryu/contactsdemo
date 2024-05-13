@@ -1,0 +1,84 @@
+.add-contact-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px dotted #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px #0000001a;
+    margin: 10px;
+    padding: 10px;
+    height: 110px;
+    min-width: 200px;
+    cursor: pointer;
+    position: relative; 
+    transition: transform 0.2s;
+  }
+  
+  .add-contact-card:hover {
+    transform: scale(1.03);
+    border-color: #aaa; 
+  }
+  
+  .add-contact-card::after {
+    content: '+ New contact';
+    font-size: 25px; 
+    color: #ccc;
+  }
+
+.option {
+    width: 50%; 
+    padding: 8px 12px; 
+    border-radius: 4px; 
+    border: 1px solid #ccc; 
+    background-color: white; 
+    font-size: 16px; 
+    cursor: pointer; 
+  }
+  
+  .option:focus {
+    outline: none; 
+    border-color: #007BFF; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  }
+
+  .select-buttons button {
+    font-size: 16px;      
+    border-radius: 10px;  
+    padding: 10px 20px;   
+    border: none;         
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 30px; 
+    min-width: 100px; 
+    min-height: 40px; 
+  }
+  
+  .select-buttons button:hover {
+    background-color: #75a8b8; /* Lighter blue when hovered */
+  }
+  
+  .contact-add-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+  
+  .contact-add-content input,
+  .contact-add-content button {
+    margin: 10px;
+    width: 80%; 
+  }
+  
+  .select-buttons {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+  }
+  
+  .select-buttons button {
+    margin: 0 5px; 
+  }
+  
