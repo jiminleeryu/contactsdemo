@@ -57,7 +57,7 @@ const ContactCard: React.FC<Contact> = ({ contact}) => {
   return (
     <div> 
       <div className="contact-card" onClick={handleOpenModal} style={{ cursor: 'pointer', border: '1px solid #ccc', padding: '15px', borderRadius: '8px', margin: '15px' }}>
-        <img src={contact.imageUrl || defaultImage} alt={contact.name} style={{ width: '100px', height: '100px', borderRadius: '50%' }} />
+        <img src={contact.imageUrl ? contact.imageUrl : defaultImage} alt={contact.name} style={{ width: '100px', height: '100px', borderRadius: '50%' }} />
         <h3>{contact.name}</h3>
       </div>
 
