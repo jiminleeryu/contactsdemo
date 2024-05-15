@@ -13,14 +13,13 @@ function ContactsPage() {
   const [filterAreaCode, setFilterAreaCode] = useState('');
   const [sortKey, setSortKey] = useState('dateAdded');
 
-  const auth = getAuth(); // Ensure you have Firebase initialized and auth imported
-
+  const auth = getAuth(); 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
         const fetchContacts = async () => {
           try {
-            const loadedContacts = await getContacts(); // Your existing function that fetches contacts
+            const loadedContacts = await getContacts();
             setContacts(loadedContacts);
           } catch (error) {
             console.error('Error fetching contacts:', error);
@@ -29,12 +28,10 @@ function ContactsPage() {
         
         fetchContacts();
       } else {
-        // Optionally handle the case where there is no user logged in
-        setContacts([]); // Clear contacts or take other appropriate action
+        setContacts([]); 
       }
     });
 
-    // Clean up the subscription on component unmount
     return () => unsubscribe();
   }, []);
 
