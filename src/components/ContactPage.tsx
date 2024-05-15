@@ -4,6 +4,7 @@ import ContactCard from './Card/ContactCard';
 import AddContact from './Card/AddContactCard';
 import { Contact, useContacts } from './Card/ContactContext';
 import { addContact, editContact, getContacts } from '../utils/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 function ContactsPage() {
   const { contacts, setContacts} = useContacts();
@@ -12,14 +13,30 @@ function ContactsPage() {
   const [filterAreaCode, setFilterAreaCode] = useState('');
   const [sortKey, setSortKey] = useState('dateAdded');
 
-  useEffect(() => {
-      const fetchContacts = async () => {
-          const loadedContacts = await getContacts();
-          setContacts(loadedContacts);
-      };
+  const auth = getAuth(); // Ensure you have Firebase initialized and auth imported
 
-      fetchContacts();
-    }, [setContacts]); // Get contacts from Firestore database
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      if (user) {
+        const fetchContacts = async () => {
+          try {
+            const loadedContacts = await getContacts(); // Your existing function that fetches contacts
+            setContacts(loadedContacts);
+          } catch (error) {
+            console.error('Error fetching contacts:', error);
+          }
+        };
+        
+        fetchContacts();
+      } else {
+        // Optionally handle the case where there is no user logged in
+        setContacts([]); // Clear contacts or take other appropriate action
+      }
+    });
+
+    // Clean up the subscription on component unmount
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
       contacts.forEach(contact => {
@@ -116,7 +133,7 @@ function ContactsPage() {
         </select>
         </div>
 
-        <input type="text" placeholder="Filter by area code" onChange={e => setFilterAreaCode(e.target.value)} />
+        <input className="area-code-filter" type="text" placeholder="Filter by area code" onChange={e => setFilterAreaCode(e.target.value)} />
 
         <AddContact onSave={handleSaveNewContact} />
 

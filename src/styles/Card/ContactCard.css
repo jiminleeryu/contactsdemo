@@ -7,8 +7,8 @@
     padding: 10px;
     transition: transform 0.2s;
     cursor: pointer;
-    width: 100%;
-    max-width: 200px;
+    width: 240px;
+    max-width: 250px;
     transition: transform 0.2s ease;
   }
   
@@ -33,6 +33,10 @@
     margin: 0;
     font-size: 16px;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;    
+    text-overflow: ellipsis; 
+    max-width: 150px;
   }
   
   .contact-address {

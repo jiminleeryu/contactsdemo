@@ -17,8 +17,9 @@ body {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
   min-width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
 }
 
 .filters {
@@ -26,8 +27,14 @@ body {
   padding: 1px; 
   font-family: Arial, sans-serif; 
   font-size: 16px; 
-  width: 100%;
   height: 100%;
+  width: 300px;
+  max-width: 300px;
+}
+
+.area-code-filter{
+  width: 270px;
+  max-width: 270px;
 }
 
 .filters select, .filters input[type="text"] {

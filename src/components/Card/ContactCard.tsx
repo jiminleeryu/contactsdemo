@@ -58,7 +58,7 @@ const ContactCard: React.FC<Contact> = ({ contact}) => {
     <div> 
       <div className="contact-card" onClick={handleOpenModal} style={{ cursor: 'pointer', border: '1px solid #ccc', padding: '15px', borderRadius: '8px', margin: '15px' }}>
         <img src={contact.imageUrl ? contact.imageUrl : defaultImage} alt={contact.name} style={{ width: '100px', height: '100px', borderRadius: '50%' }} />
-        <h3>{contact.name}</h3>
+        <h4 className="contact-name">{contact.name}</h4>
       </div>
 
       <Modal isOpen={isModalOpen} onRequestClose={handleCloseModal} contentLabel="Edit Contact" style={{ overlay: { backgroundColor: 'rgba(0, 0, 0, 0.75)' }, content: { top: '50%', left: '50%', right: 'auto', bottom: 'auto', marginRight: '-50%', transform: 'translate(-50%, -50%)', width: '40%', height: '80%', border: '1px solid #ccc', borderRadius: '10px', padding: '20px' } }}>
