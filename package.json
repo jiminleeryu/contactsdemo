@@ -1,5 +1,4 @@
 {
-  "homepage": "http://jiminleeryu.github.io/contactsdemo",
   "dependencies": {
     "@vitejs/plugin-react": "^4.2.1",
     "cookie": "^0.6.0",
@@ -24,8 +23,10 @@
   },
   "scripts": {
     "start": "vite",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "build": "vite build && firebase deploy",
+    "serve": "vite preview"
   }
 }
